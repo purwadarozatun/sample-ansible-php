@@ -7,8 +7,31 @@
     state: present
   tags: mysql 
 
+- name: Install Sotware Properties Common 
+  apt:
+    name: software-properties-common
+    state: present
+  tags: php
+
+- name: Install Isb release
+  apt:
+    name: lsb-release
+    state: present
+  tags: php
+
+- name: Install Transport Https
+  apt:
+    name: apt-transport-https
+    state: present
+  tags: php
+
+- name: Install Ca Cert
+  script: scripts/installphpcert.sh
+  tags: php
+
 - name: Install php7.4 
   apt:
+    update_cache: yes
     name: php7.4
     state: present
   tags: php
