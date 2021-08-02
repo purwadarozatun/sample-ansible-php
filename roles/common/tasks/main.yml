@@ -1,0 +1,21 @@
+---
+# This playbook contains common plays that will be run on all nodes.
+
+- name: Install Mysql 
+  apt:
+    name: mysql-server
+    state: present
+  tags: mysql 
+
+- name: Install php7.4 
+  apt:
+    name: php7.4
+    state: present
+  tags: php
+
+- name: Install Dependency php7.4 
+  script: scripts/installphp.sh
+
+- name: Install Composer 
+  script: scripts/installcomposer.sh
+
