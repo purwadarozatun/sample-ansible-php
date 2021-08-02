@@ -42,3 +42,13 @@
 - name: Install Composer 
   script: scripts/installcomposer.sh
 
+- name: Add Composer global to bash 
+  become: yes
+  become_user: theakistea
+  script: scripts/setcomposerhome.sh
+
+- name: Install Laravel Valet 
+  become: yes
+  become_user: theakistea
+  script: scripts/installvaletlinux.sh
+
