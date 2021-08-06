@@ -1,2 +1,2 @@
-snap snap install android-studio --classic
+snap install android-studio --classic
 return 0
