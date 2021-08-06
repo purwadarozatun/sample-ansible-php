@@ -8,8 +8,7 @@ then
     rm composer-setup.php
     exit 1
 fi
-php composer-setup.php --quiet
+php composer-setup.php --quiet --install-dir=/usr/local/bin/ --filename=composer
 RESULT=$?
 rm composer-setup.php
-mv composer.phar /usr/local/bin/composer
 exit $RESULT

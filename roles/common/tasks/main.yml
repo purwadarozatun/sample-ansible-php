@@ -24,11 +24,7 @@
     name: apt-transport-https
     state: present
   tags: php
-
-- name: Install Ca Cert
-  script: scripts/installphpcert.sh
-  tags: php
-
+  
 - name: Install php7.4 
   apt:
     update_cache: yes
@@ -52,3 +48,40 @@
   become_user: theakistea
   script: scripts/installvaletlinux.sh
 
+
+- name: Install java via sdkman
+  become: yes
+  become_user: theakistea
+  script: scripts/installsdkman.sh
+
+- name: Install nodejs
+  script: scripts/installnodejs.sh
+
+- name: Install snapd 
+  apt:
+    update_cache: yes
+    name: snapd
+    state: present
+
+- name: Install intelijj
+  become: yes
+  become_user: theakistea
+  script: scripts/installintelijj.sh
+
+- name: Install Chrome
+  become: yes
+  become_user: theakistea
+  script: scripts/installchrome.sh
+
+- name: Install Android Studio
+  become: yes
+  become_user: theakistea
+  script: scripts/installandroid.sh
+
+- name: Install Sublime
+  become: yes
+  become_user: theakistea
+  script: scripts/installsublime.sh
+
+
+  
